@@ -209,10 +209,10 @@ namespace UnityEngine
 		public T Load<T>(string name) where T : Object => LoadAsset<T>(name);
 		public T LoadAsset<T>(string name) where T : Object
 		{
-			if (!Unhollower.IsIl2CppObjectType(typeof(T)))
+			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new System.NullReferenceException("The type must be a Generated Assembly Type.");
 			System.IntPtr intptr = LoadAsset(name, Il2CppType.Of<T>().Pointer);
-			return ((intptr != System.IntPtr.Zero) ? Unhollower.Il2CppObjectPtrToIl2CppObject<T>(intptr) : null);
+			return ((intptr != System.IntPtr.Zero) ? UnhollowerSupport.Il2CppObjectPtrToIl2CppObject<T>(intptr) : null);
 		}
 		public Object Load(string name, Il2CppSystem.Type type) => LoadAsset(name, type);
 		public Object LoadAsset(string name, Il2CppSystem.Type type)
@@ -239,7 +239,7 @@ namespace UnityEngine
 		public AssetBundleCreateRequest LoadAssetAsync(string name) => LoadAssetAsync<Object>(name);
 		public AssetBundleCreateRequest LoadAssetAsync<T>(string name) where T : Object
 		{
-			if (!Unhollower.IsIl2CppObjectType(typeof(T)))
+			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new System.NullReferenceException("The type must be a Generated Assembly Type.");
 			System.IntPtr intptr = LoadAssetAsync(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
@@ -269,7 +269,7 @@ namespace UnityEngine
 		public Il2CppReferenceArray<T> LoadAll<T>() where T : Object => LoadAllAssets<T>();
 		public Il2CppReferenceArray<T> LoadAllAssets<T>() where T : Object
 		{
-			if (!Unhollower.IsIl2CppObjectType(typeof(T)))
+			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new System.NullReferenceException("The type must be a Generated Assembly Type.");
 			System.IntPtr intptr = LoadAllAssets(Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<T>(intptr) : null);
@@ -287,7 +287,7 @@ namespace UnityEngine
 		public Il2CppReferenceArray<Object> LoadAssetWithSubAssets(string name) => LoadAssetWithSubAssets<Object>(name);
 		public Il2CppReferenceArray<T> LoadAssetWithSubAssets<T>(string name) where T : Object
 		{
-			if (!Unhollower.IsIl2CppObjectType(typeof(T)))
+			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new System.NullReferenceException("The type must be a Generated Assembly Type.");
 			System.IntPtr intptr = LoadAssetWithSubAssets(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<T>(intptr) : null);
@@ -315,7 +315,7 @@ namespace UnityEngine
 		public AssetBundleCreateRequest LoadAssetWithSubAssetsAsync(string name) => LoadAssetWithSubAssetsAsync<Object>(name);
 		public AssetBundleCreateRequest LoadAssetWithSubAssetsAsync<T>(string name) where T : Object
 		{
-			if (!Unhollower.IsIl2CppObjectType(typeof(T)))
+			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new System.NullReferenceException("The type must be a Generated Assembly Type.");
 			System.IntPtr intptr = LoadAssetWithSubAssetsAsync(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
