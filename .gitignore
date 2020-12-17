@@ -370,7 +370,6 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/git,visualstudio
 
-*.sln
 Output
 Libs/MelonLoader.dll
 Libs/Il2Cppmscorlib.dll
