@@ -20,9 +20,9 @@ namespace UnityEngine
             get_assetBundleDelegateField = IL2CPP.ResolveICall<get_assetBundleDelegate>("UnityEngine.AssetBundleCreateRequest::get_assetBundle");
         }
 
-        [UnhollowerBaseLib.Attributes.HideFromIl2Cpp]
         public Il2CppAssetBundle assetBundle
         {
+            [UnhollowerBaseLib.Attributes.HideFromIl2Cpp]
             get
             {
                 var ptr = get_assetBundleDelegateField(this.Pointer);
