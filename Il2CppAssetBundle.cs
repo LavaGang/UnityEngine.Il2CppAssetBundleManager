@@ -128,22 +128,22 @@ namespace UnityEngine
 			return LoadAsset_InternalDelegateField(bundleptr, IL2CPP.ManagedStringToIl2Cpp(name), typeptr);
 		}
 
-		public AssetBundleRequest LoadAssetAsync(string name) => LoadAssetAsync<Object>(name);
+		public Il2CppAssetBundleRequest LoadAssetAsync(string name) => LoadAssetAsync<Object>(name);
 
-		public AssetBundleRequest LoadAssetAsync<T>(string name) where T : Object
+		public Il2CppAssetBundleRequest LoadAssetAsync<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new NullReferenceException("The type must be a Generated Assembly Type.");
             IntPtr intptr = LoadAssetAsync(name, Il2CppType.Of<T>().Pointer);
-			return ((intptr != IntPtr.Zero) ? new AssetBundleRequest(intptr) : null);
+			return ((intptr != IntPtr.Zero) ? new Il2CppAssetBundleRequest(intptr) : null);
 		}
 
-		public AssetBundleRequest LoadAssetAsync(string name, Il2CppSystem.Type type)
+		public Il2CppAssetBundleRequest LoadAssetAsync(string name, Il2CppSystem.Type type)
 		{
 			if (type == null)
 				throw new NullReferenceException("The input type cannot be null.");
             IntPtr intptr = LoadAssetAsync(name, type.Pointer);
-			return ((intptr != IntPtr.Zero) ? new AssetBundleRequest(intptr) : null);
+			return ((intptr != IntPtr.Zero) ? new Il2CppAssetBundleRequest(intptr) : null);
 		}
 
 		public IntPtr LoadAssetAsync(string name, IntPtr typeptr)
@@ -218,22 +218,22 @@ namespace UnityEngine
 			return LoadAssetWithSubAssets_InternalDelegateField(bundleptr, IL2CPP.ManagedStringToIl2Cpp(name), typeptr);
 		}
 
-		public AssetBundleRequest LoadAssetWithSubAssetsAsync(string name) => LoadAssetWithSubAssetsAsync<Object>(name);
+		public Il2CppAssetBundleRequest LoadAssetWithSubAssetsAsync(string name) => LoadAssetWithSubAssetsAsync<Object>(name);
 
-		public AssetBundleRequest LoadAssetWithSubAssetsAsync<T>(string name) where T : Object
+		public Il2CppAssetBundleRequest LoadAssetWithSubAssetsAsync<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
 				throw new NullReferenceException("The type must be a Generated Assembly Type.");
             IntPtr intptr = LoadAssetWithSubAssetsAsync(name, Il2CppType.Of<T>().Pointer);
-			return ((intptr != IntPtr.Zero) ? new AssetBundleRequest(intptr) : null);
+			return ((intptr != IntPtr.Zero) ? new Il2CppAssetBundleRequest(intptr) : null);
 		}
 
-		public AssetBundleRequest LoadAssetWithSubAssetsAsync(string name, Il2CppSystem.Type type)
+		public Il2CppAssetBundleRequest LoadAssetWithSubAssetsAsync(string name, Il2CppSystem.Type type)
 		{
 			if (type == null)
 				throw new NullReferenceException("The input type cannot be null.");
             IntPtr intptr = LoadAssetWithSubAssetsAsync(name, type.Pointer);
-			return ((intptr != IntPtr.Zero) ? new AssetBundleRequest(intptr) : null);
+			return ((intptr != IntPtr.Zero) ? new Il2CppAssetBundleRequest(intptr) : null);
 		}
 
 		public IntPtr LoadAssetWithSubAssetsAsync(string name, IntPtr typeptr)

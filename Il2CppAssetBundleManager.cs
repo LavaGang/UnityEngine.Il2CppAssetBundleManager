@@ -47,18 +47,18 @@ namespace UnityEngine
             return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundle(intPtr) : null);
         }
 
-		public static AssetBundleCreateRequest LoadFromFileAsync(string path) => LoadFromFileAsync(path, 0u, 0UL);
+		public static Il2CppAssetBundleCreateRequest LoadFromFileAsync(string path) => LoadFromFileAsync(path, 0u, 0UL);
 		
-		public static AssetBundleCreateRequest LoadFromFileAsync(string path, uint crc) => LoadFromFileAsync(path, crc, 0UL);
+		public static Il2CppAssetBundleCreateRequest LoadFromFileAsync(string path, uint crc) => LoadFromFileAsync(path, crc, 0UL);
         
-		public static AssetBundleCreateRequest LoadFromFileAsync(string path, uint crc, ulong offset)
+		public static Il2CppAssetBundleCreateRequest LoadFromFileAsync(string path, uint crc, ulong offset)
         {
 			if (string.IsNullOrEmpty(path))
 				throw new System.ArgumentException("The input asset bundle path cannot be null or empty.");
 			if (LoadFromFileAsync_InternalDelegateField == null)
                 throw new System.NullReferenceException("The LoadFromFileAsync_InternalDelegateField cannot be null.");
             System.IntPtr intPtr = LoadFromFileAsync_InternalDelegateField(IL2CPP.ManagedStringToIl2Cpp(path), crc, offset);
-            return ((intPtr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intPtr) : null);
+            return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundleCreateRequest(intPtr) : null);
         }
 
 		public static Il2CppAssetBundle LoadFromMemory(Il2CppStructArray<byte> binary) => LoadFromMemory(binary, 0u);
@@ -73,16 +73,16 @@ namespace UnityEngine
             return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundle(intPtr) : null);
         }
 
-		public static AssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary) => LoadFromMemoryAsync(binary, 0u);
+		public static Il2CppAssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary) => LoadFromMemoryAsync(binary, 0u);
         
-		public static AssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary, uint crc)
+		public static Il2CppAssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary, uint crc)
         {
 			if (binary == null)
 				throw new System.ArgumentException("The binary cannot be null or empty.");
 			if (LoadFromMemoryAsync_InternalDelegateField == null)
                 throw new System.NullReferenceException("The LoadFromMemoryAsync_InternalDelegateField cannot be null.");
             System.IntPtr intPtr = LoadFromMemoryAsync_InternalDelegateField(IL2CPP.Il2CppObjectBaseToPtrNotNull(binary), crc);
-            return ((intPtr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intPtr) : null);
+            return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundleCreateRequest(intPtr) : null);
         }
 
 		public static Il2CppAssetBundle LoadFromStream(Stream stream) => LoadFromStream(stream, 0u, 0u);
@@ -99,18 +99,18 @@ namespace UnityEngine
             return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundle(intPtr) : null);
         }
 
-		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream) => LoadFromStreamAsync(stream, 0u, 0u);
+		public static Il2CppAssetBundleCreateRequest LoadFromStreamAsync(Stream stream) => LoadFromStreamAsync(stream, 0u, 0u);
 		
-		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc) => LoadFromStreamAsync(stream, crc, 0u);
+		public static Il2CppAssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc) => LoadFromStreamAsync(stream, crc, 0u);
 		
-		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc, uint managedReadBufferSize)
+		public static Il2CppAssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc, uint managedReadBufferSize)
 		{
 			if (stream == null)
 				throw new System.ArgumentException("The stream cannot be null or empty.");
 			if (LoadFromStreamAsyncInternalDelegateField == null)
 				throw new System.NullReferenceException("The LoadFromStreamAsyncInternalDelegateField cannot be null.");
 			System.IntPtr intPtr = LoadFromStreamAsyncInternalDelegateField(IL2CPP.Il2CppObjectBaseToPtrNotNull(stream), crc, managedReadBufferSize);
-			return ((intPtr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intPtr) : null);
+			return ((intPtr != System.IntPtr.Zero) ? new Il2CppAssetBundleCreateRequest(intPtr) : null);
 		}
 
 		public static void UnloadAllAssetBundles(bool unloadAllObjects)
