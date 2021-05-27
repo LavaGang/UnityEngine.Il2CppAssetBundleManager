@@ -34,8 +34,10 @@ namespace UnityEngine
 		}
 
 		public static Il2CppAssetBundle LoadFromFile(string path) => LoadFromFile(path, 0u, 0UL);
+		
 		public static Il2CppAssetBundle LoadFromFile(string path, uint crc) => LoadFromFile(path, crc, 0UL);
-        public static Il2CppAssetBundle LoadFromFile(string path, uint crc, ulong offset)
+        
+		public static Il2CppAssetBundle LoadFromFile(string path, uint crc, ulong offset)
         {
 			if (string.IsNullOrEmpty(path))
 				throw new System.ArgumentException("The input asset bundle path cannot be null or empty.");
@@ -46,8 +48,10 @@ namespace UnityEngine
         }
 
 		public static AssetBundleCreateRequest LoadFromFileAsync(string path) => LoadFromFileAsync(path, 0u, 0UL);
+		
 		public static AssetBundleCreateRequest LoadFromFileAsync(string path, uint crc) => LoadFromFileAsync(path, crc, 0UL);
-        public static AssetBundleCreateRequest LoadFromFileAsync(string path, uint crc, ulong offset)
+        
+		public static AssetBundleCreateRequest LoadFromFileAsync(string path, uint crc, ulong offset)
         {
 			if (string.IsNullOrEmpty(path))
 				throw new System.ArgumentException("The input asset bundle path cannot be null or empty.");
@@ -58,7 +62,8 @@ namespace UnityEngine
         }
 
 		public static Il2CppAssetBundle LoadFromMemory(Il2CppStructArray<byte> binary) => LoadFromMemory(binary, 0u);
-        public static Il2CppAssetBundle LoadFromMemory(Il2CppStructArray<byte> binary, uint crc)
+        
+		public static Il2CppAssetBundle LoadFromMemory(Il2CppStructArray<byte> binary, uint crc)
         {
 			if (binary == null)
 				throw new System.ArgumentException("The binary cannot be null or empty.");
@@ -69,7 +74,8 @@ namespace UnityEngine
         }
 
 		public static AssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary) => LoadFromMemoryAsync(binary, 0u);
-        public static AssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary, uint crc)
+        
+		public static AssetBundleCreateRequest LoadFromMemoryAsync(Il2CppStructArray<byte> binary, uint crc)
         {
 			if (binary == null)
 				throw new System.ArgumentException("The binary cannot be null or empty.");
@@ -80,8 +86,10 @@ namespace UnityEngine
         }
 
 		public static Il2CppAssetBundle LoadFromStream(Stream stream) => LoadFromStream(stream, 0u, 0u);
+		
 		public static Il2CppAssetBundle LoadFromStream(Stream stream, uint crc) => LoadFromStream(stream, crc, 0u);
-        public static Il2CppAssetBundle LoadFromStream(Stream stream, uint crc, uint managedReadBufferSize)
+        
+		public static Il2CppAssetBundle LoadFromStream(Stream stream, uint crc, uint managedReadBufferSize)
         {
 			if (stream == null)
 				throw new System.ArgumentException("The stream cannot be null or empty.");
@@ -92,7 +100,9 @@ namespace UnityEngine
         }
 
 		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream) => LoadFromStreamAsync(stream, 0u, 0u);
+		
 		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc) => LoadFromStreamAsync(stream, crc, 0u);
+		
 		public static AssetBundleCreateRequest LoadFromStreamAsync(Stream stream, uint crc, uint managedReadBufferSize)
 		{
 			if (stream == null)
@@ -131,8 +141,10 @@ namespace UnityEngine
 	public class Il2CppAssetBundle
     {
         private System.IntPtr bundleptr = System.IntPtr.Zero;
-        public Il2CppAssetBundle(System.IntPtr ptr) { bundleptr = ptr; }
-        static Il2CppAssetBundle()
+        
+		public Il2CppAssetBundle(System.IntPtr ptr) { bundleptr = ptr; }
+        
+		static Il2CppAssetBundle()
         {
             get_isStreamedSceneAssetBundleDelegateField = IL2CPP.ResolveICall<get_isStreamedSceneAssetBundleDelegate>("UnityEngine.AssetBundle::get_isStreamedSceneAssetBundle");
             returnMainAssetDelegateField = IL2CPP.ResolveICall<returnMainAssetDelegate>("UnityEngine.AssetBundle::returnMainAsset");
@@ -183,6 +195,7 @@ namespace UnityEngine
         }
 
 		public Il2CppStringArray AllAssetNames() => GetAllAssetNames();
+		
 		public Il2CppStringArray GetAllAssetNames()
 		{
 			if (bundleptr == System.IntPtr.Zero)
@@ -194,7 +207,8 @@ namespace UnityEngine
 		}
 
 		public Il2CppStringArray AllScenePaths() => GetAllScenePaths();
-        public Il2CppStringArray GetAllScenePaths()
+        
+		public Il2CppStringArray GetAllScenePaths()
         {
             if (bundleptr == System.IntPtr.Zero)
                 throw new System.NullReferenceException("The bundleptr cannot be IntPtr.Zero");
@@ -205,8 +219,11 @@ namespace UnityEngine
         }
 
 		public Object Load(string name) => LoadAsset(name);
+		
 		public Object LoadAsset(string name) => LoadAsset<Object>(name);
+		
 		public T Load<T>(string name) where T : Object => LoadAsset<T>(name);
+		
 		public T LoadAsset<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
@@ -214,7 +231,9 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAsset(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? UnhollowerSupport.Il2CppObjectPtrToIl2CppObject<T>(intptr) : null);
 		}
+		
 		public Object Load(string name, Il2CppSystem.Type type) => LoadAsset(name, type);
+		
 		public Object LoadAsset(string name, Il2CppSystem.Type type)
 		{
             if (type == null)
@@ -222,7 +241,9 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAsset(name, type.Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Object(intptr) : null);
 		}
+		
 		public System.IntPtr Load(string name, System.IntPtr typeptr) => LoadAsset(name, typeptr);
+		
 		public System.IntPtr LoadAsset(string name, System.IntPtr typeptr)
 		{
 			if (bundleptr == System.IntPtr.Zero)
@@ -237,6 +258,7 @@ namespace UnityEngine
 		}
 
 		public AssetBundleCreateRequest LoadAssetAsync(string name) => LoadAssetAsync<Object>(name);
+		
 		public AssetBundleCreateRequest LoadAssetAsync<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
@@ -244,6 +266,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetAsync(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
 		}
+
 		public AssetBundleCreateRequest LoadAssetAsync(string name, Il2CppSystem.Type type)
 		{
 			if (type == null)
@@ -251,6 +274,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetAsync(name, type.Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
 		}
+
 		public System.IntPtr LoadAssetAsync(string name, System.IntPtr typeptr)
 		{
 			if (bundleptr == System.IntPtr.Zero)
@@ -265,8 +289,11 @@ namespace UnityEngine
 		}
 
 		public Il2CppReferenceArray<Object> LoadAll() => LoadAllAssets();
+		
 		public Il2CppReferenceArray<Object> LoadAllAssets() => LoadAllAssets<Object>();
+		
 		public Il2CppReferenceArray<T> LoadAll<T>() where T : Object => LoadAllAssets<T>();
+		
 		public Il2CppReferenceArray<T> LoadAllAssets<T>() where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
@@ -274,7 +301,9 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAllAssets(Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<T>(intptr) : null);
 		}
+
 		public Il2CppReferenceArray<Object> LoadAll(Il2CppSystem.Type type) => LoadAllAssets(type);
+		
 		public Il2CppReferenceArray<Object> LoadAllAssets(Il2CppSystem.Type type)
 		{
 			if (type == null)
@@ -282,9 +311,13 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAllAssets(type.Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<Object>(intptr) : null);
 		}
+
 		public System.IntPtr LoadAll(System.IntPtr typeptr) => LoadAllAssets(typeptr);
-        public System.IntPtr LoadAllAssets(System.IntPtr typeptr) => LoadAssetWithSubAssets(string.Empty, typeptr);
+        
+		public System.IntPtr LoadAllAssets(System.IntPtr typeptr) => LoadAssetWithSubAssets(string.Empty, typeptr);
+		
 		public Il2CppReferenceArray<Object> LoadAssetWithSubAssets(string name) => LoadAssetWithSubAssets<Object>(name);
+		
 		public Il2CppReferenceArray<T> LoadAssetWithSubAssets<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
@@ -292,6 +325,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetWithSubAssets(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<T>(intptr) : null);
 		}
+
 		public Il2CppReferenceArray<Object> LoadAssetWithSubAssets(string name, Il2CppSystem.Type type)
 		{
 			if (type == null)
@@ -299,6 +333,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetWithSubAssets(name, type.Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new Il2CppReferenceArray<Object>(intptr) : null);
 		}
+
         public System.IntPtr LoadAssetWithSubAssets(string name, System.IntPtr typeptr)
         {
             if (bundleptr == System.IntPtr.Zero)
@@ -313,6 +348,7 @@ namespace UnityEngine
         }
 
 		public AssetBundleCreateRequest LoadAssetWithSubAssetsAsync(string name) => LoadAssetWithSubAssetsAsync<Object>(name);
+		
 		public AssetBundleCreateRequest LoadAssetWithSubAssetsAsync<T>(string name) where T : Object
 		{
 			if (!UnhollowerSupport.IsGeneratedAssemblyType(typeof(T)))
@@ -320,6 +356,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetWithSubAssetsAsync(name, Il2CppType.Of<T>().Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
 		}
+
 		public AssetBundleCreateRequest LoadAssetWithSubAssetsAsync(string name, Il2CppSystem.Type type)
 		{
 			if (type == null)
@@ -327,6 +364,7 @@ namespace UnityEngine
 			System.IntPtr intptr = LoadAssetWithSubAssetsAsync(name, type.Pointer);
 			return ((intptr != System.IntPtr.Zero) ? new AssetBundleCreateRequest(intptr) : null);
 		}
+
 		public System.IntPtr LoadAssetWithSubAssetsAsync(string name, System.IntPtr typeptr)
 		{
 			if (bundleptr == System.IntPtr.Zero)
