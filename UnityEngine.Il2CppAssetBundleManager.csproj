@@ -47,10 +47,6 @@
       <HintPath>Libs\Il2CppSystem.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="UnhollowerBaseLib">
       <Private>false</Private>
       <HintPath>Libs\UnhollowerBaseLib.dll</HintPath>
