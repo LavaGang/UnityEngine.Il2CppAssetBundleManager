@@ -1,6 +1,6 @@
 ### GENERAL INFORMATION:
 
-- Il2Cpp Asset Bundle Manager for [Il2CppAssemblyUnhollower](https://github.com/knah/Il2CppAssemblyUnhollower) and [MelonLoader](https://github.com/LavaGang/MelonLoader).
+- Il2Cpp Asset Bundle Manager for [Il2CppInterop](https://github.com/Bepinex/Il2CppInterop) and [MelonLoader](https://github.com/LavaGang/MelonLoader).
 
 ---
 
