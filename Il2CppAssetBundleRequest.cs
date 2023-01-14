@@ -1,5 +1,6 @@
 ﻿using System;
-using UnhollowerBaseLib;
+using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 
 namespace UnityEngine
 {
@@ -9,14 +10,14 @@ namespace UnityEngine
 
         static Il2CppAssetBundleCreateRequest()
         {
-            UnhollowerRuntimeLib.ClassInjector.RegisterTypeInIl2Cpp<Il2CppAssetBundleCreateRequest>();
+            Il2CppInterop.Runtime.Injection.ClassInjector.RegisterTypeInIl2Cpp<Il2CppAssetBundleCreateRequest>();
 
             get_assetBundleDelegateField = IL2CPP.ResolveICall<get_assetBundleDelegate>("UnityEngine.AssetBundleCreateRequest::get_assetBundle");
         }
 
         public Il2CppAssetBundle assetBundle
         {
-            [UnhollowerBaseLib.Attributes.HideFromIl2Cpp]
+            [Il2CppInterop.Runtime.Attributes.HideFromIl2Cpp]
             get
             {
                 var ptr = get_assetBundleDelegateField(this.Pointer);
@@ -36,7 +37,7 @@ namespace UnityEngine
 
         static Il2CppAssetBundleRequest()
         {
-            UnhollowerRuntimeLib.ClassInjector.RegisterTypeInIl2Cpp<Il2CppAssetBundleRequest>();
+            Il2CppInterop.Runtime.Injection.ClassInjector.RegisterTypeInIl2Cpp<Il2CppAssetBundleRequest>();
 
             get_assetDelegateField = IL2CPP.ResolveICall<get_assetDelegate>("UnityEngine.AssetBundleRequest::get_asset");
             get_allAssetsDelegateField = IL2CPP.ResolveICall<get_allAssetsDelegate>("UnityEngine.AssetBundleRequest::get_allAssets");
