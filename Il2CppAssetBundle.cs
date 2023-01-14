@@ -2,6 +2,7 @@
 using MelonLoader;
 using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using System.Xml.Linq;
 
 namespace UnityEngine
 {
@@ -181,7 +182,14 @@ namespace UnityEngine
 
         public IntPtr LoadAll(IntPtr typeptr) => LoadAllAssets(typeptr);
 
-        public IntPtr LoadAllAssets(IntPtr typeptr) => LoadAssetWithSubAssets(string.Empty, typeptr);
+        public IntPtr LoadAllAssets(IntPtr typeptr)
+        {
+            if (typeptr == IntPtr.Zero)
+                throw new NullReferenceException("The input type cannot be IntPtr.Zero");
+            if (LoadAssetWithSubAssets_InternalDelegateField == null)
+                throw new NullReferenceException("The LoadAssetWithSubAssets_InternalDelegateField cannot be null.");
+            return LoadAssetWithSubAssets_InternalDelegateField(bundleptr, IL2CPP.ManagedStringToIl2Cpp(string.Empty), typeptr);
+        }
 
         public Il2CppReferenceArray<Object> LoadAssetWithSubAssets(string name) => LoadAssetWithSubAssets<Object>(name);
 
