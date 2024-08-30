@@ -36,12 +36,9 @@
       <Private>false</Private>
       <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="MelonLoader">
-      <Private>false</Private>
-      <HintPath>Libs\MelonLoader.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="LavaGang.MelonLoader" Version="0.6.4" />
     <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.355802">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
