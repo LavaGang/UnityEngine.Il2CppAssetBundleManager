@@ -371,10 +371,4 @@ MigrationBackup/
 # End of https://www.toptal.com/developers/gitignore/api/git,visualstudio
 
 Output
-Libs/MelonLoader.dll
-Libs/Il2Cppmscorlib.dll
-Libs/Il2CppSystem.dll
-Libs/UnhollowerBaseLib.dll
-Libs/UnhollowerRuntimeLib.dll
-Libs/UnityEngine.AssetBundleModule.dll
-Libs/UnityEngine.CoreModule.dll
+Libs/*.dll
